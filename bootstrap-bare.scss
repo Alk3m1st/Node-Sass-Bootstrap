@@ -1,0 +1,88 @@
+﻿// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+@import "bootstrap/glyphicons";
+@import "bootstrap/buttons";
+@import "bootstrap/badges";
+@import "bootstrap/navs";
+@import "bootstrap/progress-bars";
+
+@import "bootstrap/grid";
+
+// Utility classes
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+@mixin col-valign {
+	display: inline-block;
+	vertical-align: middle;
+	float: none;
+}
+
+// Other base styles
+.row {
+    box-sizing: border-box;
+
+	[class*="col-"] {
+		box-sizing: border-box;
+	}
+}
+
+.btn .badge-notify {
+	font-family: $font-family-base;
+	background-color: red;
+	color: white;
+	position: absolute;
+	right: -8px;
+	top: -8px;
+	padding: 3px 4px;
+}
+
+.row-no-pad {
+	[class*="col-"] {
+		padding: 0;
+	}
+}
+
+.row-sm-pad {
+	[class*="col-"] {
+		padding: 0 5px;
+	}
+}
+
+.row-md-pad {
+	[class*="col-"] {
+		padding: 0 10px
+	}
+}
+
+// Custom vertical button line-stacking
+.btn-vert {
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+@media (min-width: $screen-xs-min) {
+	.col-xs-valign { @include col-valign; }
+}
+
+@media (min-width: $screen-sm-min) {
+	.col-sm-valign { @include col-valign; }
+}
+
+@media (min-width: $screen-md-min) {
+	.col-md-valign { @include col-valign; }
+}
+
+@media (min-width: $screen-lg-min) {
+	.col-lg-valign { @include col-valign; }
+}
+
+.glyphicon-undo	{ 
+	&:before { content: "\e095"; -moz-transform: scale(-1, 1); } 
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+}
